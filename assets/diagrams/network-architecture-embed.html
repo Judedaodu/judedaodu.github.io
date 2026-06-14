@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="embed-base.css" />
+<style>
+.wrap::before{background:radial-gradient(ellipse 70% 50% at 20% 0%,rgba(30,215,96,.06) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 85% 100%,rgba(88,166,255,.07) 0%,transparent 55%)}
+</style>
+</head>
+<body>
+<script>if(new URLSearchParams(location.search).has('thumb'))document.documentElement.classList.add('thumb-mode');</script>
+<div class="wrap">
+  <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Network config backup and monitoring architecture diagram</h2>
+
+  <div class="arch-header">
+    <div style="display:flex;gap:3px;flex-wrap:wrap">
+      <span class="badge">● Automation</span>
+      <span class="badge badge-blue">99% effort ↓</span>
+    </div>
+    <div class="arch-header-meta">
+      <div class="arch-layer-tags">
+        <span class="arch-layer-tag" style="background:#1e3a2f;color:#3fb950;border:1px solid #1e6a3e">Scheduler</span>
+        <span class="arch-layer-tag" style="background:#1a2d4a;color:#58a6ff;border:1px solid #1f4e8c">SSH</span>
+        <span class="arch-layer-tag" style="background:#2b1f0a;color:#e3b341;border:1px solid #6a4e10">Storage</span>
+        <span class="arch-layer-tag" style="background:#211535;color:#bc8cff;border:1px solid #5a3898">Backend</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pipeline">
+
+    <!-- Stage 1: Trigger -->
+    <div class="stage">
+      <div class="stage-label">L1 · Trigger</div>
+      <div class="stage-body">
+        <div class="card">
+          <div class="card-tag tag-green">Cron</div>
+          <div class="icon-wrap icon-green">
+            <svg viewBox="0 0 24 24" fill="none" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#3fb950" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#3fb950" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="card-name">APScheduler</div>
+          <div class="card-sub">every 6 hrs</div>
+        </div>
+        <div class="card">
+          <div class="card-tag tag-green">Orchestrator</div>
+          <div class="icon-wrap brand-light">
+            <img class="brand-logo" src="https://cdn.simpleicons.org/python/3776AB" alt="Python" width="24" height="24" />
+          </div>
+          <div class="card-name">Python script</div>
+          <div class="card-sub">automation core</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conn"><div class="conn-line-h"></div><div class="arrow-h"></div></div>
+
+    <!-- Stage 2: SSH / Netmiko -->
+    <div class="stage">
+      <div class="stage-label">L2 · SSH / Netmiko</div>
+      <div class="stage-body">
+        <div class="stage-box">
+          <div class="stage-box-label">SSH :22</div>
+          <div class="card">
+            <div class="card-tag tag-blue">Library</div>
+            <div class="icon-wrap brand-light">
+              <img class="brand-logo" src="https://cdn.simpleicons.org/python/3776AB" alt="Netmiko (Python)" width="24" height="24" />
+            </div>
+            <div class="card-name">Netmiko</div>
+            <div class="card-sub">multi-vendor SSH</div>
+          </div>
+          <div class="card">
+            <div class="card-tag tag-blue">Config</div>
+            <div class="icon-wrap brand-light">
+              <img class="brand-logo" src="https://cdn.simpleicons.org/yaml/CB171E" alt="YAML" width="24" height="24" />
+            </div>
+            <div class="card-name">Device inventory</div>
+            <div class="card-sub">YAML · IPs · creds</div>
+          </div>
+          <div class="device-pair">
+            <div class="card">
+              <div class="icon-wrap brand-light">
+                <img class="brand-logo" src="https://cdn.simpleicons.org/cisco/1BA0D7" alt="Cisco" width="24" height="24" />
+              </div>
+              <div class="card-name">Cisco</div>
+              <div class="card-sub">IOS · show run</div>
+            </div>
+            <div class="card">
+              <div class="icon-wrap brand-light">
+                <img class="brand-logo" src="https://cdn.simpleicons.org/huawei/CF0A2C" alt="Huawei" width="24" height="24" />
+              </div>
+              <div class="card-name">Huawei</div>
+              <div class="card-sub">VRP · curr-cfg</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conn"><div class="conn-line-h"></div><div class="arrow-h"></div></div>
+
+    <!-- Stage 3: Parse / Store -->
+    <div class="stage">
+      <div class="stage-label">L3 · Parse &amp; Store</div>
+      <div class="stage-body">
+        <div class="card">
+          <div class="card-tag tag-green">Parser</div>
+          <div class="icon-wrap brand-light">
+            <img class="brand-logo" src="https://cdn.simpleicons.org/python/3776AB" alt="Python parser" width="24" height="24" />
+          </div>
+          <div class="card-name">Config parser</div>
+          <div class="card-sub">diff · timestamp</div>
+        </div>
+        <div class="card">
+          <div class="card-tag tag-amber">Local</div>
+          <div class="icon-wrap brand-light">
+            <img class="brand-logo" src="https://cdn.simpleicons.org/gnu/624F3B" alt="Linux filesystem" width="24" height="24" />
+          </div>
+          <div class="card-name">Local FS</div>
+          <div class="card-sub">/backups/</div>
+        </div>
+        <div class="card">
+          <div class="card-tag tag-amber">Cloud</div>
+          <div class="icon-wrap brand-aws brand-aws-s3" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4.5C9.2 6 6.5 6.2 5 7.5v9c0 1.8 2.8 2 5.5 3 2.7-1 5.5-1.2 5.5-3v-9c-1.5-1.3-4.2-1.5-7-2.5z" stroke="#569A31" stroke-width="1.4" fill="rgba(86,154,49,0.12)"/>
+              <path d="M5 7.5c0 1.2 3.1 1.8 7 2.5s7-1.3 7-2.5" stroke="#569A31" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M5 12c0 1.2 3.1 1.8 7 2.5s7-1.3 7-2.5" stroke="#569A31" stroke-width="1.4" stroke-linecap="round" opacity="0.75"/>
+            </svg>
+          </div>
+          <div class="card-name">AWS S3</div>
+          <div class="card-sub">versioned · encrypted</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conn"><div class="conn-line-h purple"></div><div class="arrow-h purple"></div></div>
+
+    <!-- Stage 4: Backend -->
+    <div class="stage">
+      <div class="stage-label">L4 · Backend API</div>
+      <div class="stage-body">
+        <div class="card">
+          <div class="card-tag tag-purple">REST</div>
+          <div class="icon-wrap brand-light">
+            <img class="brand-logo" src="https://cdn.simpleicons.org/flask/000000" alt="Flask" width="24" height="24" />
+          </div>
+          <div class="card-name">Flask</div>
+          <div class="card-sub">/api/devices</div>
+        </div>
+        <div class="card">
+          <div class="card-tag tag-purple">Compute</div>
+          <div class="icon-wrap brand-aws" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="5" width="14" height="11" rx="1.5" stroke="#FF9900" stroke-width="1.4" fill="rgba(255,153,0,0.1)"/>
+              <path d="M5 9h14M9 5V3.5M15 5V3.5" stroke="#FF9900" stroke-width="1.4" stroke-linecap="round"/>
+              <circle cx="12" cy="18.5" r="1.2" fill="#FF9900"/>
+              <path d="M10.5 18.5h3" stroke="#FF9900" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="card-name">AWS EC2</div>
+          <div class="card-sub">gunicorn · nginx</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conn"><div class="conn-line-h blue"></div><div class="arrow-h blue"></div></div>
+
+    <!-- Stage 5: Dashboard -->
+    <div class="stage">
+      <div class="stage-label">L5 · Dashboard</div>
+      <div class="stage-body">
+        <div class="card">
+          <div class="card-tag tag-blue">Frontend</div>
+          <div class="icon-wrap brand-dark">
+            <img class="brand-logo" src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" width="24" height="24" />
+          </div>
+          <div class="card-name">JS dashboard</div>
+          <div class="card-sub">refresh 60s</div>
+        </div>
+        <div class="card">
+          <div class="card-tag tag-blue">UI</div>
+          <div class="icon-wrap brand-light">
+            <img class="brand-logo" src="https://cdn.simpleicons.org/chartdotjs/FF6384" alt="Chart.js" width="24" height="24" />
+          </div>
+          <div class="card-name">Live charts</div>
+          <div class="card-sub">uptime · alerts</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num" style="color:#3fb950">99%</div>
+      <div class="stat-lbl">Manual effort cut</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" style="color:#58a6ff">70%</div>
+      <div class="stat-lbl">Faster response</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" style="color:#e3b341">200+</div>
+      <div class="stat-lbl">Devices backed up</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" style="color:#bc8cff">24/7</div>
+      <div class="stat-lbl">Auto-scheduled</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

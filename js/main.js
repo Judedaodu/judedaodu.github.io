@@ -1,5 +1,5 @@
 /* ================================================================
-   JUDE DAODU — PORTFOLIO  |  script.js
+   JUDE DAODU — PORTFOLIO  |  js/main.js
    ================================================================ */
 'use strict';
 
@@ -13,35 +13,41 @@ const yearSpan  = document.getElementById('year');
 if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
 /* ── NAVBAR SCROLL SHADOW ─────────────────────────────────────── */
-const handleScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 50);
-window.addEventListener('scroll', handleScroll, { passive: true });
-handleScroll();
+if (navbar) {
+  const handleScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 50);
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+}
 
 /* ── HAMBURGER ────────────────────────────────────────────────── */
-hamburger.addEventListener('click', () => {
-  const open = navLinks.classList.toggle('open');
-  hamburger.classList.toggle('open', open);
-  hamburger.setAttribute('aria-expanded', String(open));
-  document.body.style.overflow = open ? 'hidden' : '';
-});
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
 
-const closeMenu = () => {
-  navLinks.classList.remove('open');
-  hamburger.classList.remove('open');
-  hamburger.setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
-};
+  const closeMenu = () => {
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
 
-navLinks.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', closeMenu));
-document.addEventListener('click', e => {
-  if (!navbar.contains(e.target)) closeMenu();
-});
+  navLinks.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', closeMenu));
+  document.addEventListener('click', e => {
+    if (!navbar.contains(e.target)) closeMenu();
+  });
+}
 
 /* ── SMOOTH SCROLL ────────────────────────────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (!target) return;
+    const href = this.getAttribute('href');
+    if (!href || href.length < 2) return;
+    const target = document.querySelector(href);
+    if (!target || !navbar) return;
     e.preventDefault();
     const offset = navbar.offsetHeight + 10;
     window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
@@ -50,29 +56,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 /* ── SCROLL FADE-INS (IntersectionObserver) ───────────────────── */
 const fadeEls = document.querySelectorAll('.fade-in');
-const fadeObserver = new IntersectionObserver(
-  entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fadeObserver.unobserve(e.target); } }),
-  { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-);
-fadeEls.forEach(el => fadeObserver.observe(el));
+if (fadeEls.length) {
+  const fadeObserver = new IntersectionObserver(
+    entries => entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        fadeObserver.unobserve(e.target);
+      }
+    }),
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+  fadeEls.forEach(el => fadeObserver.observe(el));
+}
 
 /* ── ACTIVE NAV HIGHLIGHT ─────────────────────────────────────── */
 const sections   = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-link');
 
-const sectionObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const id = e.target.id;
-      navAnchors.forEach(a => {
-        const match = a.getAttribute('href') === `#${id}`;
-        a.classList.toggle('active', match);
-      });
-    }
-  });
-}, { threshold: 0.45 });
+if (sections.length && navAnchors.length) {
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        navAnchors.forEach(a => {
+          const match = a.getAttribute('href') === `#${id}` || a.getAttribute('href')?.endsWith(`#${id}`);
+          a.classList.toggle('active', match);
+        });
+      }
+    });
+  }, { threshold: 0.45 });
 
-sections.forEach(s => sectionObserver.observe(s));
+  sections.forEach(s => sectionObserver.observe(s));
+}
 
 /* ── SKILL PILL TOGGLE ────────────────────────────────────────── */
 document.querySelectorAll('.pill').forEach(pill => {

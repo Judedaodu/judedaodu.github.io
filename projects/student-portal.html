@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="High-Availability Secure Student Portal — a case study by Jude Daodu." />
+  <title>Secure Student Portal Case Study | Jude Daodu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body class="case-study-page">
+
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html#hero" class="logo">JD<span class="logo-accent">.</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#skills" class="nav-link">Skills</a>
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <header class="case-study-hero">
+      <div class="container case-study-hero-inner">
+        <a href="../index.html#projects" class="case-back fade-in">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Portfolio
+        </a>
+
+        <div class="case-study-header fade-in">
+          <p class="case-study-category">Full-Stack / Cloud · Project 04</p>
+          <h1 class="case-study-title">High-Availability Secure Student Portal</h1>
+          <p class="case-study-subtitle">Scalable Full-Stack Architecture with AWS EC2, Python, and Robust Endpoint Security</p>
+        </div>
+
+        <figure class="case-study-hero-image fade-in">
+          <iframe
+            src="../assets/diagrams/student-portal-architecture-embed.html"
+            title="Secure student portal architecture diagram"
+            loading="eager"
+            scrolling="no"
+            tabindex="-1"
+          ></iframe>
+        </figure>
+      </div>
+    </header>
+
+    <div class="container case-study-body">
+
+      <section class="section fade-in" aria-labelledby="overview-heading">
+        <h2 id="overview-heading">Project Overview</h2>
+        <p>Designed, engineered, and deployed a high-availability, secure web-based student portal hosted on Amazon Web Services (AWS) to support over 10,000 concurrent academic users. The project addressed critical legacy infrastructure vulnerabilities, including frequent peak-load database crashes during registration periods, unencrypted session management, and slow page rendering. By building a robust full-stack solution powered by a Python backend and a responsive JavaScript frontend, the portal successfully modernizes academic operations. The underlying architecture leverages hardened AWS EC2 instances, optimized database connection pooling, and strict end-to-end security frameworks to maintain consistent performance, eliminate downtime, and safeguard sensitive student information at scale.</p>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="problems-goals-heading">
+        <h2 id="problems-goals-heading" class="visually-hidden">Problems &amp; Goals</h2>
+
+        <div class="case-grid-2">
+
+          <div class="case-block case-block--problems">
+            <h3>Problems</h3>
+            <ul class="case-list case-list--problems">
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Severe Peak-Load Degradation:</strong> The legacy system experienced recurrent crashes and timeout errors during high-traffic academic events (e.g., course registration, exam result releases), completely disrupting student workflows.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Session Vulnerabilities &amp; Exploits:</strong> Lack of secure session handling and strict input sanitization exposed the application to cross-site scripting (XSS), SQL injection, and session hijacking risks.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Monolithic Monitored Downtime:</strong> Code updates or server maintenance required full system blackouts, resulting in extensive, unannounced application downtime and administrative backlogs.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Sub-Optimal Asset Delivery:</strong> Unoptimized frontend asset management and heavy database queries resulted in high latency, causing prolonged page-load times for users over low-bandwidth mobile connections.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="case-block case-block--goals">
+            <h3>Goals</h3>
+            <ul class="case-list case-list--goals">
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Deliver Resilient Enterprise Hosting:</strong> Migrate the core portal to a high-performance AWS compute framework tailored to handle rapid spikes of 10,000+ active university users seamlessly.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Implement End-to-End Security Hardening:</strong> Secure all endpoint APIs, implement robust encryption at rest and in transit, and eliminate standard OWASP Top 10 vulnerabilities.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Optimize Application Latency:</strong> Build an asynchronous full-stack communication layer using JavaScript and Python to ensure snappy user responses and optimized database execution.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Achieve Continuous System Availability:</strong> Establish automated health tracking, load-handling strategies, and modular code isolation to ensure the portal remains active around the clock.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="role-heading">
+        <h2 id="role-heading">Role &amp; Responsibilities</h2>
+        <ul class="case-list case-list--role">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Architected End-to-End Application Flow:</strong> Designed the full-stack system layout, database schema migrations, and secure API contracts binding the user interface to the core processing engine.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Developed the Python Backend API:</strong> Programmed a secure, high-performance backend application utilizing structured query optimization, input validation logic, and automated error catching.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Engineered Responsive JavaScript Interface:</strong> Built the client-side interaction engine, implementing asynchronous state updates, client-side input validation, and intuitive data layouts.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Provisioned and Managed AWS Compute:</strong> Deployed and configured production-grade AWS EC2 instances, anchoring them behind secure custom Virtual Private Cloud (VPC) subnets and hardened security groups.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Enforced Application Security Baselines:</strong> Configured SSL/TLS certificates via Let&apos;s Encrypt, structured secure HTTP-only cookies, and implemented JSON Web Token (JWT) authorization controls.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="architecture-heading">
+        <h2 id="architecture-heading">Architecture &amp; Deployment Flow</h2>
+        <ul class="case-list case-list--arch">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Client Request Initiation:</strong> Students access the portal via web browsers, executing an initial secure HTTPS handshake over the internet.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Traffic Ingress Filtering:</strong> Incoming traffic passes through an AWS Security Group layer acting as a virtual firewall, explicitly restricting open ports to essential web traffic (443/80).</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Web Server Reverse Proxy:</strong> Traffic enters the AWS EC2 instance and is handled by a local reverse proxy (such as Nginx), which terminates SSL certificates and efficiently forwards traffic to the internal application engine.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Backend Processing Execution:</strong> The Python application layer ingests the requests, verifies the attached JWT authorization token for validity, and runs the corresponding business logic.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Optimized Database Interfacing:</strong> The backend queries the secure storage engine using a decoupled connection-pooling mechanism, pulling encrypted student profiles, grades, and course records efficiently.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Asynchronous Client-Side Update:</strong> The Python engine responds with structured JSON data. The JavaScript frontend dynamically parses the response payload, updating the user interface in real-time without executing a full browser reload.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Continuous State Monitoring:</strong> Local process managers (like systemd) monitor the health of the background application script, automatically restarting the process if memory limits or unexpected runtime errors occur.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="implementation-heading">
+        <h2 id="implementation-heading">Key Implementation Details</h2>
+
+        <div class="case-detail-cards">
+
+          <article class="case-detail-card">
+            <h3>High-Concurrency Performance Tuning</h3>
+            <p>Optimized backend execution by replacing blocking relational database calls with optimized indexed queries and connection reuse limits. This modification kept CPU utilization on the EC2 instances below 40% even during simulated high-velocity stress testing mimicking 10,000 active students.</p>
+          </article>
+
+          <article class="case-detail-card">
+            <h3>Hardened Stateless Token Authentication</h3>
+            <p>Implemented a secure authentication workflow utilizing short-lived JWT tokens stored securely within HTTP-only, SameSite cookies. This layout explicitly shields user sessions from malicious JavaScript extraction and mitigates Cross-Site Request Forgery (CSRF) attacks.</p>
+          </article>
+
+          <article class="case-detail-card">
+            <h3>Asynchronous Frontend Hydration</h3>
+            <p>Re-engineered the application interface to load structural elements instantly while filling in heavy data records (like transcripts and course schedules) asynchronously via JavaScript fetch modules, reducing perceived user load times by over 50%.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="results-heading">
+        <h2 id="results-heading">Results &amp; Impact</h2>
+        <ul class="case-list case-list--results">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>100% Reliable Peak Load Operations:</strong> Sustained flawless application availability during high-stress registration cycles for over 10,000 active university users with zero server drops.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>Drastic Reduction in Latency:</strong> Lowered average server response times across the portal, providing students with a fast, non-blocking interface across both desktop and mobile devices.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>Zero Discovered Security Breaches:</strong> Successfully closed legacy perimeter gaps, passing rigorous input testing validations and completely eliminating unauthorized data manipulation.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>Simplified IT Administrative Overhead:</strong> Consolidated system logging, user authorization, and asset delivery, lowering operational IT support requests during standard academic cycles.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="tech-heading">
+        <h2 id="tech-heading">Technology Stack</h2>
+
+        <div class="case-tech-grid">
+
+          <div class="case-tech-group">
+            <h3>Cloud Hosting &amp; Infrastructure</h3>
+            <div class="case-tech-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">AWS EC2</span>
+              <span class="tag">Amazon VPC</span>
+              <span class="tag">AWS Security Groups</span>
+            </div>
+          </div>
+
+          <div class="case-tech-group">
+            <h3>Backend Engineering</h3>
+            <div class="case-tech-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Web API Frameworks</span>
+              <span class="tag">Secure JWT Auth</span>
+              <span class="tag">Connection Pooling</span>
+            </div>
+          </div>
+
+          <div class="case-tech-group">
+            <h3>Frontend Development</h3>
+            <div class="case-tech-tags">
+              <span class="tag">JavaScript (ES6+)</span>
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">Asynchronous Fetch API</span>
+            </div>
+          </div>
+
+          <div class="case-tech-group">
+            <h3>Security &amp; Server Management</h3>
+            <div class="case-tech-tags">
+              <span class="tag">SSL/TLS (Let&apos;s Encrypt)</span>
+              <span class="tag">Reverse Proxy</span>
+              <span class="tag">Linux Systemd</span>
+              <span class="tag">Linux Environment Hardening</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <div class="case-study-footer-cta fade-in">
+      <a href="../index.html#projects" class="btn btn-ghost">
+        <i class="fa-solid fa-arrow-left"></i> Back to All Projects
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; <span id="year"></span> Daodu Jude Ayomide. All rights reserved.</p>
+        <p class="footer-built">Designed &amp; built by <span class="accent">Jude Daodu</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

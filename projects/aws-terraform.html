@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Automated AWS Infrastructure Provisioning Platform — a case study by Jude Daodu." />
+  <title>AWS Terraform IaC Case Study | Jude Daodu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body class="case-study-page">
+
+  <!-- ░░ NAVBAR ░░ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html#hero" class="logo">JD<span class="logo-accent">.</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#skills" class="nav-link">Skills</a>
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ░░ CASE STUDY HERO ░░ -->
+    <header class="case-study-hero">
+      <div class="container case-study-hero-inner">
+        <a href="../index.html#projects" class="case-back fade-in">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Portfolio
+        </a>
+
+        <div class="case-study-header fade-in">
+          <p class="case-study-category">Cloud &amp; IaC · Project 03</p>
+          <h1 class="case-study-title">Automated AWS Infrastructure Provisioning Platform</h1>
+          <p class="case-study-subtitle">Infrastructure as Code (IaC) with Terraform, Multi-AZ Architecture, &amp; ISO 27001 Compliance</p>
+        </div>
+
+        <figure class="case-study-hero-image case-study-hero-image--brand fade-in">
+          <img
+            src="../assets/images/aws-wordmark.svg"
+            alt="Amazon Web Services logo"
+            width="420"
+            height="420"
+          />
+        </figure>
+      </div>
+    </header>
+
+    <div class="container case-study-body">
+
+      <!-- ░░ PROJECT OVERVIEW ░░ -->
+      <section class="section fade-in" aria-labelledby="overview-heading">
+        <h2 id="overview-heading">Project Overview</h2>
+        <p>Designed and engineered a fully automated, production-ready cloud infrastructure framework on Amazon Web Services (AWS) utilizing Terraform to replace legacy, manual provisioning workflows. The project addressed critical challenges around environmental configuration drift, deployment speed, and stringent regulatory compliance by establishing a highly available, multi-tier infrastructure blueprint. By leveraging modular Infrastructure as Code (IaC), the platform ensures isolated, repeatable staging and production environments integrated with ISO 27001-compliant backup retention strategies, rigorous Business Continuity Planning (BCP) validation, and optimized data egress routing. The implementation successfully reduced environment deployment times by <strong>60%</strong>, minimized the corporate blast radius, and delivered a scalable architecture capable of supporting high-volume financial transaction workloads securely.</p>
+      </section>
+
+      <!-- ░░ PROBLEMS & GOALS ░░ -->
+      <section class="section fade-in" aria-labelledby="problems-goals-heading">
+        <h2 id="problems-goals-heading" class="visually-hidden">Problems &amp; Goals</h2>
+
+        <div class="case-grid-2">
+
+          <div class="case-block case-block--problems">
+            <h3>Problems</h3>
+            <ul class="case-list case-list--problems">
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Environment Configuration Drift:</strong> Relying on manual AWS console modifications caused severe configuration drift between staging, UAT, and production environments, leading to deployment failures and untrackable infrastructure states.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Slow and Error-Prone Provisioning:</strong> Building out comprehensive VPC networking, compute clusters, storage policies, and granular identity access controls manually took days, creating operational friction and delaying product feature rollouts.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Compliance and Audit Vulnerabilities:</strong> The absence of standardized backup strategies, missing object-versioning lifecycles, and loose IAM permissions presented compliance gaps regarding ISO 27001 standards and auditing requirements.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Escalating Cloud Infrastructure Costs:</strong> Outbound data transfer patterns and unoptimized multi-AZ data pathways led to unpredictable data egress fees, impacting overall cloud efficiency at scale.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="case-block case-block--goals">
+            <h3>Goals</h3>
+            <ul class="case-list case-list--goals">
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Establish Unified IaC Standards:</strong> Model 100% of the AWS infrastructure using reusable, parametric Terraform modules to enforce single-source-of-truth configuration management.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Achieve Rapid Environment Replication:</strong> Target a 60% or higher reduction in environment spin-up and teardown times through declarative automation pipelines.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Enforce Strict ISO 27001 Controls:</strong> Embed compliance requirements directly into the architecture code, including segregated subnets, automated backup encryption, and least-privilege IAM baselines.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Architect High Availability and BCP Resilience:</strong> Secure maximum uptime through Multi-Availability Zone (Multi-AZ) placement while designing and simulating structured Business Continuity Plan (BCP) disaster recovery scenarios.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ░░ ROLE & RESPONSIBILITIES ░░ -->
+      <section class="section fade-in" aria-labelledby="role-heading">
+        <h2 id="role-heading">Role &amp; Responsibilities</h2>
+        <ul class="case-list case-list--role">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Designed Modular Terraform Architecture:</strong> Built a reusable library of custom Terraform modules managing standardized network, compute, IAM, and storage components across multiple AWS accounts.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Engineered Network Isolation Topology:</strong> Structured a multi-tier AWS VPC network layout utilizing public, private, and isolated data subnets distributed across multiple Availability Zones.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Implemented Least-Privilege IAM Framework:</strong> Authored declarative IAM policies, roles, and service control policies (SCPs) to enforce role-based access control (RBAC) and strict boundary limits.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Formulated Compliance Backup Strategies:</strong> Developed automated snapshot policies and multi-region lifecycle rules for S3 data states and EC2 storage to satisfy ISO 27001 technical controls.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Executed BCP Drills &amp; Cost Optimisation:</strong> Conducted simulated infrastructure failure recovery tests (RTO/RPO targets) and optimized NAT Gateway data processing paths to minimize monthly egress expenditure.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ░░ ARCHITECTURE & DEPLOYMENT FLOW ░░ -->
+      <section class="section fade-in" aria-labelledby="architecture-heading">
+        <h2 id="architecture-heading">Architecture &amp; Deployment Flow</h2>
+        <ul class="case-list case-list--arch">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>IaC Execution Trigger:</strong> A cloud engineer updates or executes a configuration change via local or automated Git-driven Terraform workflows.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>State Management Lock:</strong> Terraform queries the backend, engaging a state-locking mechanism via DynamoDB to prevent concurrent executions while referencing a secure, encrypted S3 remote state bucket.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>VPC Networking Provisioning:</strong> The IaC engine provisions a logically isolated VPC across multiple Availability Zones, deploying Internet Gateways, NAT Gateways, and isolated routing tables.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Subnet Tier Allocation:</strong> Subnets are automatically split into Public (for ingress load balancing), Private (for application EC2 instances running in Auto Scaling Groups), and Data layers (for isolated database backends).</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Identity &amp; Access Provisioning:</strong> IAM roles and instance profiles are created dynamically, embedding contextual boundaries and cryptographic KMS keys directly to the resources that require them.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Compute Deployed with Hardened Storage:</strong> EC2 workloads are launched within the private subnets, equipped with encrypted Elastic Block Store (EBS) volumes configured for automated snapshot cycles.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>ISO 27001 Object Storage Enforcement:</strong> S3 data buckets are instantiated with mandatory server-side encryption (SSE-KMS), object versioning enabled, and explicit public access blocks applied by default.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Data Lifecycle Routing &amp; BCP Verification:</strong> Cross-region backup replication jobs are initiated automatically for critical data layers, establishing a warm-standby or cold disaster recovery perimeter in accordance with BCP rules.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Egress Cost Mitigation:</strong> Internal service communications are mapped using AWS VPC Endpoints (PrivateLink) for S3 and other native services, avoiding costly public internet routing via NAT Gateways.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ░░ KEY IMPLEMENTATION DETAILS ░░ -->
+      <section class="section fade-in" aria-labelledby="implementation-heading">
+        <h2 id="implementation-heading">Key Implementation Details</h2>
+
+        <div class="case-detail-cards">
+
+          <article class="case-detail-card">
+            <h3>Reusable Multi-Environment Terraform Modules</h3>
+            <p>Developed dry-run validated, highly parameterizable Terraform definitions. The code dynamically detects environment variables (e.g., prod, staging), adjusting instance sizing, replication frequencies, and subnet boundaries seamlessly without code duplication.</p>
+          </article>
+
+          <article class="case-detail-card">
+            <h3>ISO 27001-Compliant Data Retention</h3>
+            <p>Engineered an immutable backup pipeline utilizing automated lifecycle rules. Data residing within S3 and EBS layers undergoes mandatory KMS-managed encryption at rest and is automatically transitioned to long-term cold storage (Glacier Deep Archive) or replicated to secondary AWS regions for disaster readiness.</p>
+          </article>
+
+          <article class="case-detail-card">
+            <h3>Network Cost Optimization at Scale</h3>
+            <p>Analyzed traffic pathways to target egress spending. By swapping out public route endpoints for specific VPC Gateway Endpoints, data traversing between app servers and storage layers remained completely local to the AWS backbone network, permanently removing NAT Gateway processing surcharges.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ░░ RESULTS & IMPACT ░░ -->
+      <section class="section fade-in" aria-labelledby="results-heading">
+        <h2 id="results-heading">Results &amp; Impact</h2>
+        <ul class="case-list case-list--results">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>60% Faster Deployment Velocities:</strong> Successfully compressed the time required to spin up comprehensive, audited enterprise testing environments from days to under an hour.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>Audit-Ready Compliance Posture:</strong> Met and sustained structural compliance goals matching ISO 27001 criteria, establishing complete infrastructure visibility, resource traceability, and automated configuration history.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>100% Zero-Drift Guarantee:</strong> Transitioned the organizational cloud management model to a state where unauthorized console manual modifications are automatically detected and rectified by the declarative IaC pipeline.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>Validated Business Continuity Plan (BCP):</strong> Proven disaster recovery capabilities through simulation drills, guaranteeing strict recovery time objectives (RTO) and recovery point objectives (RPO) goals are satisfied during active regional outages.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ░░ TECHNOLOGY STACK ░░ -->
+      <section class="section fade-in" aria-labelledby="tech-heading">
+        <h2 id="tech-heading">Technology Stack</h2>
+
+        <div class="case-tech-grid">
+
+          <div class="case-tech-group">
+            <h3>Infrastructure as Code (IaC)</h3>
+            <div class="case-tech-tags">
+              <span class="tag">Terraform</span>
+              <span class="tag">Terraform Cloud</span>
+              <span class="tag">Remote State</span>
+            </div>
+          </div>
+
+          <div class="case-tech-group">
+            <h3>Cloud Infrastructure &amp; Networking</h3>
+            <div class="case-tech-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">AWS VPC</span>
+              <span class="tag">Amazon EC2</span>
+              <span class="tag">Amazon S3</span>
+              <span class="tag">IAM</span>
+              <span class="tag">NAT Gateway</span>
+              <span class="tag">VPC Endpoints</span>
+              <span class="tag">KMS</span>
+              <span class="tag">DynamoDB</span>
+            </div>
+          </div>
+
+          <div class="case-tech-group">
+            <h3>Compliance &amp; Governance</h3>
+            <div class="case-tech-tags">
+              <span class="tag">ISO 27001</span>
+              <span class="tag">Business Continuity Planning</span>
+              <span class="tag">Disaster Recovery</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ░░ BACK CTA ░░ -->
+    <div class="case-study-footer-cta fade-in">
+      <a href="../index.html#projects" class="btn btn-ghost">
+        <i class="fa-solid fa-arrow-left"></i> Back to All Projects
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; <span id="year"></span> Daodu Jude Ayomide. All rights reserved.</p>
+        <p class="footer-built">Designed &amp; built by <span class="accent">Jude Daodu</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

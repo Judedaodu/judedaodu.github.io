@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Network Infrastructure Automation & Real-Time Monitoring Portal — a case study by Jude Daodu." />
+  <title>Network Automation Case Study | Jude Daodu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body class="case-study-page">
+
+  <!-- ░░ NAVBAR ░░ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html#hero" class="logo">JD<span class="logo-accent">.</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#skills" class="nav-link">Skills</a>
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ░░ CASE STUDY HERO ░░ -->
+    <header class="case-study-hero">
+      <div class="container case-study-hero-inner">
+        <a href="../index.html#projects" class="case-back fade-in">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Portfolio
+        </a>
+
+        <div class="case-study-header fade-in">
+          <p class="case-study-category">Automation &amp; Monitoring · Project 02</p>
+          <h1 class="case-study-title">Network Infrastructure Automation &amp; Real-Time Monitoring Portal</h1>
+          <p class="case-study-subtitle">Network Automation with AWS EC2, Python, Flask, &amp; Hybrid Hardware Environments</p>
+        </div>
+
+        <figure class="case-study-hero-image fade-in">
+          <iframe
+            src="../assets/diagrams/network-architecture-embed.html"
+            title="Network config backup and monitoring architecture diagram"
+            loading="eager"
+            scrolling="no"
+            tabindex="-1"
+          ></iframe>
+        </figure>
+      </div>
+    </header>
+
+    <div class="container case-study-body">
+
+      <!-- ░░ PROJECT OVERVIEW ░░ -->
+      <section class="section fade-in" aria-labelledby="overview-heading">
+        <h2 id="overview-heading">Project Overview</h2>
+        <p>Designed and implemented an automated network configuration and monitoring solution for a rapidly growing fintech platform to streamline infrastructure management and ensure enterprise-grade disaster recovery. The project resolved critical operational bottlenecks across a multi-vendor network environment by integrating a custom-built automation engine with an interactive, centralized dashboard deployed on Amazon EC2. The architecture combines Python and shell scripting for scheduled, reliable configuration backups, a lightweight Flask web framework for real-time health telemetry, and secure networking protocols to communicate across production systems. This centralized platform minimizes configuration drift, ensures immediate recovery readiness, and delivers end-to-end visibility across all active corporate networking infrastructure.</p>
+      </section>
+
+      <!-- ░░ PROBLEMS & GOALS ░░ -->
+      <section class="section fade-in" aria-labelledby="problems-goals-heading">
+        <h2 id="problems-goals-heading" class="visually-hidden">Problems &amp; Goals</h2>
+
+        <div class="case-grid-2">
+
+          <div class="case-block case-block--problems">
+            <h3>Problems</h3>
+            <ul class="case-list case-list--problems">
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span>The existing network infrastructure relied heavily on manual backups, consuming significant engineering hours and increasing the risk of human error or missed schedules.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span>Managing a hybrid environment consisting of both Cisco and Huawei devices required switching between disparate operating systems and command syntaxes, leading to operational fragmentation.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span>Network health and configuration status lacked real-time monitoring and centralized visibility, delaying the identification of silent device failures or unauthorized changes.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span>The absence of an automated, off-site repository for network states increased the recovery time objective (RTO) and exposed the business to potential extended downtime during outages.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="case-block case-block--goals">
+            <h3>Goals</h3>
+            <ul class="case-list case-list--goals">
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span>Build a scalable, vendor-agnostic network automation engine capable of orchestrating configurations across diverse Cisco and Huawei enterprise devices seamlessly.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span>Deliver a modern, centralized web dashboard providing real-time infrastructure telemetry, backup validation logs, and current network health status.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span>Transition the automation tools from localized scripts to a secure, cloud-native hosting model on Amazon Web Services (AWS) for maximum uptime and resilience.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span>Eliminate operational bottlenecks by targeting a near-total reduction in manual management overhead for standard network administration tasks.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ░░ ROLE & RESPONSIBILITIES ░░ -->
+      <section class="section fade-in" aria-labelledby="role-heading">
+        <h2 id="role-heading">Role &amp; Responsibilities</h2>
+        <ul class="case-list case-list--role">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span>Architected the core automation framework, including the scheduled backup engine, multi-vendor syntax parsing logic, and the central data aggregation pipelines.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span>Developed modular Python automation scripts utilizing industry-standard libraries to interface with Cisco IOS and Huawei VRP systems securely.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span>Built and deployed the web-based monitoring dashboard using the Flask framework, incorporating clean user interfaces for real-time telemetry display.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span>Provisioned, secured, and managed the cloud infrastructure on AWS EC2, ensuring secure network paths via VPC configurations, security groups, and IAM policies.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span>Implemented comprehensive error handling, logging, and state validation mechanisms within the backup engine to verify file integrity upon every execution.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span>Collaborated with network operations teams to optimize script execution schedules, device credential management, and data retention rules.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ░░ ARCHITECTURE & DEPLOYMENT FLOW ░░ -->
+      <section class="section fade-in" aria-labelledby="architecture-heading">
+        <h2 id="architecture-heading">Architecture &amp; Deployment Flow</h2>
+        <ul class="case-list case-list--arch">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span>Network infrastructure devices (Cisco routers/switches running IOS and Huawei hardware running VRP) operate within secure network segments.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span>A centralized automation platform is deployed within a secure Virtual Private Cloud (VPC) on an Amazon EC2 instance.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span>Chronologically scheduled tasks (cron jobs) on the EC2 instance trigger the Python and shell scripting core backup engine.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span>The automation engine establishes secure SSH/SFTP sessions to target devices, executes configuration retrieval commands, and parses vendor-specific command-line outputs.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span>Retrieved configuration states are parsed, timestamped, and safely written to a secure, organized file repository on the cloud instance for disaster recovery.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span>Simultaneously, the scripting engine captures device availability metrics, connection latency, and execution success statuses, outputting structured data logs.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span>A Flask web application running on the EC2 instance reads these real-time logs and state repositories to dynamically render a monitoring UI.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span>Network administrators access the interactive dashboard via web browsers, where traffic is securely routed through defined AWS security groups.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span>The dashboard UI visualizes individual device statuses, tracks historical backup trends, flags active connection issues, and provides direct downloads for historical configuration files.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ░░ KEY IMPLEMENTATION DETAILS ░░ -->
+      <section class="section fade-in" aria-labelledby="implementation-heading">
+        <h2 id="implementation-heading">Key Implementation Details</h2>
+
+        <div class="case-detail-cards">
+
+          <article class="case-detail-card">
+            <h3>Multi-Vendor Python Automation Engine</h3>
+            <p>Developed highly adaptable scripts utilizing specialized network automation libraries to normalize interactions across different network operating systems. The software intelligently detects device types, maps corresponding command syntaxes, cleans raw CLI outputs, and validates that configurations are completely downloaded before marking a job successful.</p>
+          </article>
+
+          <article class="case-detail-card">
+            <h3>Flask Telemetry Dashboard</h3>
+            <p>Built a lightweight, performant frontend-backend system using Flask to eliminate command-line dependencies for status tracking. The application consumes structured text and log data generated by the backend scripts, providing non-blocking UI updates on device availability, historical backup integrity, and current system alerts.</p>
+          </article>
+
+          <article class="case-detail-card">
+            <h3>Cloud Deployment &amp; Infrastructure Hardening</h3>
+            <p>Migrated the entire solution from a fragmented, local execution model to a dedicated AWS EC2 environment. Implemented stringent infrastructure security controls, restricting ingress and egress traffic using custom security groups, anchoring the compute within a private subnet layout, and leveraging IAM roles for secure credential and system isolation.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ░░ RESULTS & IMPACT ░░ -->
+      <section class="section fade-in" aria-labelledby="results-heading">
+        <h2 id="results-heading">Results &amp; Impact</h2>
+        <ul class="case-list case-list--results">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span>Successfully eliminated manual operational overhead by <strong>99%</strong>, converting hours of routine maintenance into hands-free, automated background operations.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span>Achieved <strong>100% backup compliance and reliability</strong> across all production Cisco and Huawei devices, creating a dependable, auditable disaster recovery repository.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span>Accelerated incident discovery and response times from hours to <strong>real-time</strong> via visual alerts on the centralized monitoring dashboard.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span>Established a standardized, modern automation blueprint within the organization that can scale easily to accommodate additional hardware vendors or new sites.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ░░ TECHNOLOGY STACK ░░ -->
+      <section class="section fade-in" aria-labelledby="tech-heading">
+        <h2 id="tech-heading">Technology Stack</h2>
+
+        <div class="case-tech-grid">
+
+          <div class="case-tech-group">
+            <h3>Cloud Infrastructure</h3>
+            <div class="case-tech-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">AWS EC2</span>
+              <span class="tag">Amazon VPC</span>
+              <span class="tag">IAM</span>
+            </div>
+          </div>
+
+          <div class="case-tech-group">
+            <h3>Automation &amp; Web Frameworks</h3>
+            <div class="case-tech-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Shell Scripting (Bash)</span>
+              <span class="tag">Flask</span>
+            </div>
+          </div>
+
+          <div class="case-tech-group">
+            <h3>Network Operating Systems</h3>
+            <div class="case-tech-tags">
+              <span class="tag">Cisco IOS</span>
+              <span class="tag">Huawei VRP</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ░░ BACK CTA ░░ -->
+    <div class="case-study-footer-cta fade-in">
+      <a href="../index.html#projects" class="btn btn-ghost">
+        <i class="fa-solid fa-arrow-left"></i> Back to All Projects
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; <span id="year"></span> Daodu Jude Ayomide. All rights reserved.</p>
+        <p class="footer-built">Designed &amp; built by <span class="accent">Jude Daodu</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

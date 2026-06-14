@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Student portal logo">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#152238"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5b8def"/>
+      <stop offset="100%" stop-color="#39ff14"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="104" height="104" rx="24" fill="url(#bg)"/>
+  <rect x="8" y="8" width="104" height="104" rx="24" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  <path d="M60 28L34 40v18c0 14.5 11.2 28 26 32 14.8-4 26-17.5 26-32V40L60 28z" fill="none" stroke="url(#accent)" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M60 36l18 8.5v12.8c0 9.8-7.6 19-18 22.2-10.4-3.2-18-12.4-18-22.2V44.5L60 36z" fill="rgba(91,141,239,0.12)"/>
+  <path d="M44 52h32M44 60h24M44 68h28" stroke="rgba(255,255,255,0.35)" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="60" cy="46" r="6" fill="#39ff14" opacity="0.9"/>
+  <path d="M48 82h24" stroke="rgba(57,255,20,0.55)" stroke-width="2" stroke-linecap="round"/>
+</svg>

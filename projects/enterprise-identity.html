@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Enterprise Identity Infrastructure &amp; Hybrid Systems Administration — a case study by Jude Daodu." />
+  <title>Enterprise AD &amp; M365 Case Study | Jude Daodu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body class="case-study-page">
+
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html#hero" class="logo">JD<span class="logo-accent">.</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#skills" class="nav-link">Skills</a>
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <header class="case-study-hero">
+      <div class="container case-study-hero-inner">
+        <a href="../index.html#projects" class="case-back fade-in">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Portfolio
+        </a>
+
+        <div class="case-study-header fade-in">
+          <p class="case-study-category">Enterprise IT · Project 06</p>
+          <h1 class="case-study-title">Enterprise Identity Infrastructure &amp; Hybrid Systems Administration</h1>
+          <p class="case-study-subtitle">Identity Access Management (IAM), Automated Patching, and Cross-Platform Service Reliability</p>
+        </div>
+
+        <figure class="case-study-hero-image case-study-hero-image--brand case-study-hero-image--microsoft fade-in">
+          <img
+            src="../assets/images/active-directory-logo.png"
+            alt="Microsoft Active Directory logo"
+            width="200"
+            height="200"
+          />
+        </figure>
+      </div>
+    </header>
+
+    <div class="container case-study-body">
+
+      <section class="section fade-in" aria-labelledby="overview-heading">
+        <h2 id="overview-heading">Project Overview</h2>
+        <p>Designed, managed, and optimized a secure, high-availability hybrid identity and systems infrastructure for an enterprise environment serving over 5,000 users. The project consolidated disparate identity vectors into a unified, secure access model using Active Directory (AD) and Microsoft 365 (M365) while systematically hardening the enterprise attack surface. Concurrently, orchestrated automated OS patching, configuration baseline enforcement, and critical vulnerability remediation pipelines across virtualized VMware environments hosting core Linux and Windows service clusters. By establishing proactive systems administration workflows and strict Service Level Agreement (SLA) compliance tracking, the platform sustained maximum uptime for foundational enterprise systems, safeguarding business continuity and corporate digital assets.</p>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="problems-goals-heading">
+        <h2 id="problems-goals-heading" class="visually-hidden">Problems &amp; Goals</h2>
+
+        <div class="case-grid-2">
+
+          <div class="case-block case-block--problems">
+            <h3>Problems</h3>
+            <ul class="case-list case-list--problems">
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Fragmented Identity &amp; Loose Access Controls:</strong> Operating without centralized identity lifecycle controls led to credential sprawl, orphaned user accounts, and unauthorized access permissions across enterprise applications.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Vulnerability Accumulation on Virtualized Hosts:</strong> Manual patch management across hundreds of Windows and Linux virtual machines running on VMware led to delayed cycles, exposing core business infrastructure to known security vulnerabilities.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>SLA Breaches &amp; Unplanned Downtime:</strong> Critical background services lacked automated cluster health monitoring and structured failover controls, causing intermittent downtime that breached agreed-upon operational SLAs.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Lack of Standardized Audit Trails:</strong> Administrative actions, privilege escalations, and endpoint access logs were decentralised, rendering security tracking and compliance reporting slow and inefficient.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="case-block case-block--goals">
+            <h3>Goals</h3>
+            <ul class="case-list case-list--goals">
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Centralize Enterprise Identity &amp; Access:</strong> Implement a robust, zero-trust-aligned IAM model across Active Directory and Microsoft 365 to manage permissions seamlessly for 5,000+ endpoints and users.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Automate Vulnerability Remediation:</strong> Establish a predictable, zero-downtime automated OS patching lifecycle across all VMware-hosted Linux and Windows Server instances.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Sustain Maximum Core Service Uptime:</strong> Re-engineer core infrastructure services to guarantee high availability and consistent alignment with strict corporate SLA frameworks.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Enforce Least-Privilege Governance:</strong> Restrict administrative rights by introducing strict Role-Based Access Control (RBAC), multi-factor authentication (MFA), and comprehensive security logging.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="role-heading">
+        <h2 id="role-heading">Role &amp; Responsibilities</h2>
+        <ul class="case-list case-list--role">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Directed Hybrid Identity Management:</strong> Structured organizational units (OUs), Group Policy Objects (GPOs), and conditional access policies within Active Directory and Azure AD/M365 to enforce corporate compliance.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Orchestrated Enterprise Patching Pipelines:</strong> Designed and scheduled automated update ring topologies for mixed Linux (Ubuntu/RHEL) and Windows Server environments without disrupting production operations.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Managed Virtualization and Storage Layers:</strong> Administered core vSphere/ESXi hypervisors on VMware, provisioning resources, optimizing host density, and managing compute allocations for critical systems.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Hardened Operating System Baselines:</strong> Developed and deployed automated configuration scripts to continuously audit and remediate security configuration drifting on remote endpoints.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Monitored and Maintained SLA Compliance:</strong> Formulated granular service checks and alerting triggers to monitor critical system states, enabling immediate remediation before failures impacted end-users.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="architecture-heading">
+        <h2 id="architecture-heading">Architecture &amp; Deployment Flow</h2>
+        <ul class="case-list case-list--arch">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Identity Lifecycle Execution:</strong> Human Resources actions trigger automated directory provisioning, translating user roles into explicit AD groups and synchronized Microsoft 365 licensing assignments.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Secure Access Challenge:</strong> When a user accesses corporate endpoints or M365 applications, Active Directory and Entra ID enforce conditional access policies, validating device compliance and triggering mandatory Multi-Factor Authentication (MFA).</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Virtualization Infrastructure Hosting:</strong> Enterprise business applications run within distinct Windows and Linux virtual machines orchestrated across highly available VMware ESXi clusters.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Vulnerability &amp; Telemetry Ingestion:</strong> Centralized vulnerability scanners perpetually query the internal network, generating structured reports detailing missing security patches or configuration risks across the fleet.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Patch Ring Scheduling:</strong> Maintenance windows are initiated systematically using automated patching rings—deploying updates to non-critical staging clusters first before graduating to production systems.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Linux and Windows Update Orchestration:</strong> Automation agents execute targeted patch deployments, safely handling service restarts, checking log health, and validating system integrity post-update.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>VMware Snapshot Protection:</strong> Prior to major system modifications, programmatic VMware snapshots are initiated as a cold fail-back vector, ensuring near-instantaneous recovery capability if an update destabilizes a core service.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>SLA Log Auditing:</strong> Infrastructure performance matrices, uptime logs, and authentication flows are aggregated continuously into centralized administration consoles for ongoing visibility and external compliance audits.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="implementation-heading">
+        <h2 id="implementation-heading">Key Implementation Details</h2>
+
+        <div class="case-detail-cards">
+
+          <article class="case-detail-card">
+            <h3>Hybrid Identity Consolidation &amp; RBAC</h3>
+            <p>Re-engineered the corporate Active Directory structure by eliminating legacy nested groups and building an explicit, audit-ready Role-Based Access Control framework. Integrated hybrid write-back rules with Microsoft 365 to enforce uniform security policies across both on-premises hardware and cloud applications.</p>
+          </article>
+
+          <article class="case-detail-card">
+            <h3>Zero-Downtime Patch Orchestration</h3>
+            <p>Developed a dual-track rolling update framework for the VMware cluster environment. By utilizing live migration techniques (like vMotion), application workloads were transparently shifted off physical hypervisors during active patching windows, allowing host updates to occur without a single second of application downtime.</p>
+          </article>
+
+          <article class="case-detail-card">
+            <h3>Hardened Group Policy &amp; Baseline Enforcement</h3>
+            <p>Authored and deployed comprehensive GPOs and configuration baselines that deactivated vulnerable legacy communication protocols, enforced local firewall configurations, and restricted administrative local access across 5,000+ enterprise endpoints.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="results-heading">
+        <h2 id="results-heading">Results &amp; Impact</h2>
+        <ul class="case-list case-list--results">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>99.99% Core Service Availability:</strong> Maintained continuous, rock-solid uptime for foundational Windows and Linux network services, fully satisfying strict corporate SLA requirements.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>100% Identity Visibility and Security:</strong> Successfully placed all 5,000+ enterprise users under a singular, audited identity management boundary, entirely wiping out orphaned accounts and unmapped access permissions.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>Drastic Reduction in Exposure Windows:</strong> Compressed the mean time to patch critical system vulnerabilities from months to standard, hands-free bi-weekly cycles across the hybrid infrastructure.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>Streamlined Security Audit Compliance:</strong> Established structured identity and event audit trails, significantly accelerating verification timelines for annual internal and external security reviews.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="tech-heading">
+        <h2 id="tech-heading">Technology Stack</h2>
+
+        <div class="case-tech-grid">
+
+          <div class="case-tech-group">
+            <h3>Identity &amp; Access Management</h3>
+            <div class="case-tech-tags">
+              <span class="tag">Active Directory</span>
+              <span class="tag">Microsoft 365</span>
+              <span class="tag">Entra ID</span>
+              <span class="tag">Group Policy Objects</span>
+              <span class="tag">MFA</span>
+              <span class="tag">RBAC</span>
+            </div>
+          </div>
+
+          <div class="case-tech-group">
+            <h3>Virtualization &amp; Hypervisors</h3>
+            <div class="case-tech-tags">
+              <span class="tag">VMware vSphere</span>
+              <span class="tag">ESXi</span>
+              <span class="tag">vCenter</span>
+              <span class="tag">vMotion</span>
+            </div>
+          </div>
+
+          <div class="case-tech-group">
+            <h3>Operating Systems &amp; Infrastructure</h3>
+            <div class="case-tech-tags">
+              <span class="tag">Linux (RHEL, Ubuntu)</span>
+              <span class="tag">Windows Server</span>
+              <span class="tag">DNS</span>
+              <span class="tag">DHCP</span>
+              <span class="tag">NTP</span>
+            </div>
+          </div>
+
+          <div class="case-tech-group">
+            <h3>Vulnerability &amp; Systems Lifecycle</h3>
+            <div class="case-tech-tags">
+              <span class="tag">Automated Patch Management</span>
+              <span class="tag">Configuration Hardening</span>
+              <span class="tag">SLA Compliance Monitoring</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <div class="case-study-footer-cta fade-in">
+      <a href="../index.html#projects" class="btn btn-ghost">
+        <i class="fa-solid fa-arrow-left"></i> Back to All Projects
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; <span id="year"></span> Daodu Jude Ayomide. All rights reserved.</p>
+        <p class="footer-built">Designed &amp; built by <span class="accent">Jude Daodu</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

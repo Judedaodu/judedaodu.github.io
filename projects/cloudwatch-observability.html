@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Enterprise CloudWatch Observability &amp; Alerting Stack — a case study by Jude Daodu." />
+  <title>CloudWatch Observability Case Study | Jude Daodu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body class="case-study-page">
+
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html#hero" class="logo">JD<span class="logo-accent">.</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#skills" class="nav-link">Skills</a>
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <header class="case-study-hero">
+      <div class="container case-study-hero-inner">
+        <a href="../index.html#projects" class="case-back fade-in">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Portfolio
+        </a>
+
+        <div class="case-study-header fade-in">
+          <p class="case-study-category">Observability &amp; SRE · Project 05</p>
+          <h1 class="case-study-title">Enterprise CloudWatch Observability &amp; Alerting Stack</h1>
+          <p class="case-study-subtitle">Real-Time SRE Pipeline with Custom Metrics, Log Aggregation, and Automated Incident Response</p>
+        </div>
+
+        <figure class="case-study-hero-image fade-in">
+          <iframe
+            src="../assets/diagrams/cloudwatch-architecture-embed.html"
+            title="CloudWatch observability architecture diagram"
+            loading="eager"
+            scrolling="no"
+            tabindex="-1"
+          ></iframe>
+        </figure>
+      </div>
+    </header>
+
+    <div class="container case-study-body">
+
+      <section class="section fade-in" aria-labelledby="overview-heading">
+        <h2 id="overview-heading">Project Overview</h2>
+        <p>Engineered a comprehensive, end-to-end observability and telemetry pipeline using AWS CloudWatch to manage a high-volume, distributed fintech platform serving over 30 million users across a hybrid cloud-and-on-premises infrastructure. The project resolved critical blind spots in system health, transient application failures, and siloed application logs by establishing unified metric dashboards, centralized log aggregation streams, and machine-learning-driven anomaly detection models. By leveraging automated alerting webhooks and infrastructure health scripts powered by Python and Bash, the solution shifted the operations model from reactive troubleshooting to proactive incident response. The deployment measurably minimized the Mean Time to Detection (MTTD) and Mean Time to Resolution (MTTR), ensuring maximum uptime, systemic predictability, and transaction reliability for millions of financial consumers.</p>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="problems-goals-heading">
+        <h2 id="problems-goals-heading" class="visually-hidden">Problems &amp; Goals</h2>
+
+        <div class="case-grid-2">
+
+          <div class="case-block case-block--problems">
+            <h3>Problems</h3>
+            <ul class="case-list case-list--problems">
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>High MTTD and MTTR Times:</strong> The lack of a centralized correlation engine across distributed hybrid systems meant that engineering teams spent hours manually searching scattered server files to diagnose system failures during active financial outages.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Alert Fatigue and False Positives:</strong> Legacy threshold alerts relied on static, hardcoded numbers, trigger-happy alarms, and noisy notifications that caused notification fatigue, blinding teams to actual high-priority system regressions.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Siloed Multitenant System Logs:</strong> Inbound logs from hybrid infrastructure nodes lacked standard aggregation, formatting, or indexing, making real-time log tracking, security tracing, and usage auditing functionally impossible.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Undetected Transient Errors:</strong> Micro-outages and silent memory leaks slipped beneath standard system health checks, accumulating quietly before developing into cascading system-wide crashes during peak transaction volumes.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="case-block case-block--goals">
+            <h3>Goals</h3>
+            <ul class="case-list case-list--goals">
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Unify Hybrid Infrastructure Monitoring:</strong> Aggregate metrics, system logs, and telemetry across both cloud native AWS compute frameworks and legacy on-premises financial hardware into a single pane of glass.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Deploy Intelligent Proactive Alerting:</strong> Build dynamic, adaptive alarms utilizing automated anomaly detection models to isolate genuine statistical deviations from normal seasonal traffic patterns.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Drastically Reduce Operational Downtime:</strong> Shrink MTTD and MTTR by implementing granular dashboard tracking, deep trace correlation, and automated incident routing configurations.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Automate Metric Collection Overheads:</strong> Eliminate manual agent configuration steps by implementing declarative, script-based log streaming setups and self-healing daemon layers.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="role-heading">
+        <h2 id="role-heading">Role &amp; Responsibilities</h2>
+        <ul class="case-list case-list--role">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Architected Global Observability Topology:</strong> Designed the end-to-end telemetry architecture, defining logging structures, custom metric namespaces, and cross-account CloudWatch dashboard hierarchies.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Engineered CloudWatch Logs Collection Pipeline:</strong> Configured and scaled CloudWatch Logs agents, log groups, subscription filters, and custom metric filters across distributed EC2 groups and hybrid Linux nodes.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Developed Automated Automation Tooling:</strong> Built customized Python and Bash automation utilities to programmatically parse systemic data layers, emit custom business metrics, and instantiate automated remediation hooks.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Configured Machine Learning Alarms:</strong> Implemented CloudWatch Anomaly Detection bands over critical transactional paths, optimizing standard statistical deviations to suppress non-actionable alarms.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Integrated Unified Incident Alerting:</strong> Linked CloudWatch Alarms to Amazon SNS, routing structured notification payloads directly to incident response communication channels, complete with contextual trace data.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="architecture-heading">
+        <h2 id="architecture-heading">Architecture &amp; Deployment Flow</h2>
+        <ul class="case-list case-list--arch">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Telemetry Data Generation:</strong> Distributed application components, background microservices, and hybrid operating systems generate raw log outputs and operational statistics locally.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Unified Agent Collection:</strong> CloudWatch Unified Agents running as persistent background daemons systematically capture system memory states, disk I/O metrics, and target application log files.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Secure Ingress Transport:</strong> The collection agents compress and stream encrypted data payloads securely over TLS endpoints directly to centralized AWS CloudWatch Log Groups.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Metric Extraction Filtering:</strong> CloudWatch Metric Filters process the streaming log text in real time, executing regular expression pattern matching to extract numerical counts (e.g., HTTP 5xx errors) and publishing them into custom namespaces.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Statistical Anomaly Assessment:</strong> The CloudWatch evaluation engine perpetually tracks incoming data streams, applying built-in machine learning models to map historical seasonality and projecting a dynamic normal operational baseline.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Alarm Trigger Activation:</strong> If an extracted metric or infrastructure metric breaks past the calculated anomaly band threshold for a sustained validation window, the status changes instantly to an ALARM state.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Notification Routing Orchestration:</strong> The triggered alarm fires a payload into an Amazon Simple Notification Service (SNS) topic, which instantly reformats the metric details via Lambda or direct webhooks.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Incident Alerting Delivery:</strong> The SRE team receives a rich alert context containing direct links to corresponding error graphs and log queries, ensuring troubleshooting steps can begin immediately.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Dashboard Visual Synchronisation:</strong> Centralized CloudWatch cross-account dashboards dynamically update their visual states, highlighting failing components cleanly for immediate root-cause tracking.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="implementation-heading">
+        <h2 id="implementation-heading">Key Implementation Details</h2>
+
+        <div class="case-detail-cards">
+
+          <article class="case-detail-card">
+            <h3>Intelligent Anomaly Detection Bands</h3>
+            <p>Configured advanced monitoring algorithms that analyze historical application workloads. The alerting engine automatically adjusts its triggering logic to compensate for low-traffic patterns at midnight versus sudden transactional spikes during daytime business peaks, cutting false alert alerts by 85%.</p>
+          </article>
+
+          <article class="case-detail-card">
+            <h3>Automated Log Analysis Queries</h3>
+            <p>Crafted saved CloudWatch Logs Insights query templates embedded directly within the dashboard viewports. Engineers can run lightning-fast concurrent searches across gigabytes of streaming log outputs using a pipe-delimited syntax to isolate specific stack traces instantly.</p>
+          </article>
+
+          <article class="case-detail-card">
+            <h3>Scalable Custom Metric Injection</h3>
+            <p>Built a lightweight Python instrumentation wrapper that captures internal platform KPIs—such as transaction confirmation delays and user checkout drops—and publishes them directly as CloudWatch Custom Metrics to align system health with actual business performance.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="results-heading">
+        <h2 id="results-heading">Results &amp; Impact</h2>
+        <ul class="case-list case-list--results">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>Measurable Reduction in MTTD/MTTR:</strong> Successfully brought the time required to detect critical infrastructure incidents down from hours to seconds, while compressing resolution cycles via structured context-driven alerting.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>Seamless Monitoring for 30M Users:</strong> Established an incredibly scalable, cloud-native monitoring boundary that handles millions of active telemetry logs without introducing application overhead or architectural lag.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>Drastic Reduction in Incident Noise:</strong> Eliminated over 80% of false-positive infrastructure notifications by replacing brittle, static thresholds with adaptive CloudWatch machine learning alarms.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>Complete Hybrid Infrastructure Visibility:</strong> Consolidated infrastructure tracking across isolated cloud platforms and on-premises computing nodes, giving the engineering team a definitive single source of operational truth.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section fade-in" aria-labelledby="tech-heading">
+        <h2 id="tech-heading">Technology Stack</h2>
+
+        <div class="case-tech-grid">
+
+          <div class="case-tech-group">
+            <h3>Observability &amp; Monitoring</h3>
+            <div class="case-tech-tags">
+              <span class="tag">AWS CloudWatch</span>
+              <span class="tag">CloudWatch Logs</span>
+              <span class="tag">CloudWatch Alarms</span>
+              <span class="tag">CloudWatch Anomaly Detection</span>
+              <span class="tag">Logs Insights</span>
+              <span class="tag">Amazon SNS</span>
+            </div>
+          </div>
+
+          <div class="case-tech-group">
+            <h3>Automation &amp; Scripting</h3>
+            <div class="case-tech-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Bash Scripting</span>
+              <span class="tag">Linux System Daemons</span>
+            </div>
+          </div>
+
+          <div class="case-tech-group">
+            <h3>SRE &amp; Incident Management</h3>
+            <div class="case-tech-tags">
+              <span class="tag">Site Reliability Engineering</span>
+              <span class="tag">Root Cause Analysis</span>
+              <span class="tag">MTTD Optimization</span>
+              <span class="tag">MTTR Optimization</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <div class="case-study-footer-cta fade-in">
+      <a href="../index.html#projects" class="btn btn-ghost">
+        <i class="fa-solid fa-arrow-left"></i> Back to All Projects
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; <span id="year"></span> Daodu Jude Ayomide. All rights reserved.</p>
+        <p class="footer-built">Designed &amp; built by <span class="accent">Jude Daodu</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

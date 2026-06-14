@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="embed-base.css" />
+<style>
+.wrap::before{background:radial-gradient(ellipse 70% 50% at 18% 0%,rgba(91,141,239,.07) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 88% 100%,rgba(57,255,20,.06) 0%,transparent 55%)}
+.diagram--student-portal .badge{background:#1a2d4a;border-color:#1f4e8c;color:#58a6ff}
+</style>
+</head>
+<body>
+<script>if(new URLSearchParams(location.search).has('thumb'))document.documentElement.classList.add('thumb-mode');</script>
+<div class="wrap diagram--student-portal">
+  <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Secure student portal architecture with AWS EC2, Python, and JavaScript</h2>
+
+  <div class="arch-header">
+    <div style="display:flex;gap:3px;flex-wrap:wrap">
+      <span class="badge">● Student Portal</span>
+      <span class="badge badge-green">10K+ users</span>
+    </div>
+    <div class="arch-header-meta">
+      <div class="arch-layer-tags">
+        <span class="arch-layer-tag" style="background:#1a2d4a;color:#58a6ff;border:1px solid #1f4e8c">HTTPS</span>
+        <span class="arch-layer-tag" style="background:#2a1215;color:#f85149;border:1px solid #6e3030">JWT</span>
+        <span class="arch-layer-tag" style="background:#211535;color:#bc8cff;border:1px solid #5a3898">Python</span>
+        <span class="arch-layer-tag" style="background:#1e3a2f;color:#3fb950;border:1px solid #1e6a3e">Async JS</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pipeline">
+
+    <div class="stage">
+      <div class="stage-label">L1 · Client</div>
+      <div class="stage-body">
+        <div class="card">
+          <div class="card-tag tag-blue">HTTPS</div>
+          <div class="icon-wrap icon-blue">
+            <svg viewBox="0 0 24 24" fill="none" width="20" height="20" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2" stroke="#58a6ff" stroke-width="1.4"/><path d="M8 20h8" stroke="#58a6ff" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <div class="card-name">Web Browser</div>
+          <div class="card-sub">10,000+ students</div>
+        </div>
+        <div class="card">
+          <div class="card-tag tag-green">SPA</div>
+          <div class="icon-wrap brand-dark">
+            <img class="brand-logo" src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" width="22" height="22" />
+          </div>
+          <div class="card-name">JavaScript UI</div>
+          <div class="card-sub">async fetch · hydrate</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conn"><div class="conn-line-h"></div><div class="arrow-h"></div></div>
+
+    <div class="stage">
+      <div class="stage-label">L2 · Perimeter</div>
+      <div class="stage-body">
+        <div class="stage-box">
+          <div class="stage-box-label">AWS VPC</div>
+          <div class="card">
+            <div class="card-tag tag-red">Firewall</div>
+            <div class="icon-wrap brand-aws" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L4 7v6c0 5.5 3.4 10.7 8 12 4.6-1.3 8-6.5 8-12V7l-8-4z" stroke="#FF9900" stroke-width="1.4" fill="rgba(255,153,0,0.08)"/>
+                <path d="M9 12l2 2 4-4" stroke="#FF9900" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="card-name">Security Groups</div>
+            <div class="card-sub">443 · 80 only</div>
+          </div>
+          <div class="card">
+            <div class="card-tag tag-blue">Network</div>
+            <div class="icon-wrap brand-aws" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="6" width="16" height="12" rx="2" stroke="#FF9900" stroke-width="1.4" fill="rgba(255,153,0,0.08)"/>
+                <path d="M4 10h16M8 6V4M16 6V4" stroke="#FF9900" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="card-name">Private Subnet</div>
+            <div class="card-sub">isolated VPC</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conn"><div class="conn-line-h amber"></div><div class="arrow-h amber"></div></div>
+
+    <div class="stage">
+      <div class="stage-label">L3 · Web Tier</div>
+      <div class="stage-body">
+        <div class="card">
+          <div class="card-tag tag-amber">TLS</div>
+          <div class="icon-wrap icon-amber">
+            <svg viewBox="0 0 24 24" fill="none" width="20" height="20" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2" stroke="#e3b341" stroke-width="1.4"/><path d="M8 10V8a4 4 0 118 0v2" stroke="#e3b341" stroke-width="1.4"/></svg>
+          </div>
+          <div class="card-name">Let&apos;s Encrypt</div>
+          <div class="card-sub">SSL termination</div>
+        </div>
+        <div class="card">
+          <div class="card-tag tag-amber">Proxy</div>
+          <div class="icon-wrap icon-green">
+            <svg viewBox="0 0 24 24" fill="none" width="20" height="20" aria-hidden="true"><path d="M4 6h16v4H4zM4 14h10v4H4z" stroke="#3fb950" stroke-width="1.4" stroke-linejoin="round"/><path d="M18 15h2v2h-2z" fill="#3fb950"/></svg>
+          </div>
+          <div class="card-name">Nginx</div>
+          <div class="card-sub">reverse proxy</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conn"><div class="conn-line-h purple"></div><div class="arrow-h purple"></div></div>
+
+    <div class="stage">
+      <div class="stage-label">L4 · Application</div>
+      <div class="stage-body">
+        <div class="card">
+          <div class="card-tag tag-purple">API</div>
+          <div class="icon-wrap brand-light">
+            <img class="brand-logo" src="https://cdn.simpleicons.org/python/3776AB" alt="Python" width="22" height="22" />
+          </div>
+          <div class="card-name">Python Backend</div>
+          <div class="card-sub">REST · validation</div>
+        </div>
+        <div class="card">
+          <div class="card-tag tag-red">Auth</div>
+          <div class="icon-wrap icon-red">
+            <svg viewBox="0 0 24 24" fill="none" width="20" height="20" aria-hidden="true"><circle cx="12" cy="8" r="3" stroke="#f85149" stroke-width="1.4"/><path d="M6 20v-1a6 6 0 0112 0v1" stroke="#f85149" stroke-width="1.4" stroke-linecap="round"/><path d="M16 12l1.5 1.5L20 11" stroke="#f85149" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="card-name">JWT Tokens</div>
+          <div class="card-sub">HTTP-only cookies</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conn"><div class="conn-line-h green"></div><div class="arrow-h green"></div></div>
+
+    <div class="stage">
+      <div class="stage-label">L5 · Data &amp; Ops</div>
+      <div class="stage-body">
+        <div class="card">
+          <div class="card-tag tag-green">Storage</div>
+          <div class="icon-wrap icon-blue">
+            <svg viewBox="0 0 24 24" fill="none" width="20" height="20" aria-hidden="true"><ellipse cx="12" cy="7" rx="7" ry="3" stroke="#58a6ff" stroke-width="1.4"/><path d="M5 7v10c0 1.7 3.1 3 7 3s7-1.3 7-3V7" stroke="#58a6ff" stroke-width="1.4"/><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3" stroke="#58a6ff" stroke-width="1.4" opacity="0.6"/></svg>
+          </div>
+          <div class="card-name">Database</div>
+          <div class="card-sub">pool · encrypted</div>
+        </div>
+        <div class="card">
+          <div class="card-tag tag-purple">Health</div>
+          <div class="icon-wrap brand-aws" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="5" width="14" height="11" rx="1.5" stroke="#FF9900" stroke-width="1.4" fill="rgba(255,153,0,0.1)"/>
+              <path d="M5 9h14M9 5V3.5M15 5V3.5" stroke="#FF9900" stroke-width="1.4" stroke-linecap="round"/>
+              <circle cx="12" cy="18.5" r="1.2" fill="#FF9900"/>
+            </svg>
+          </div>
+          <div class="card-name">AWS EC2</div>
+          <div class="card-sub">systemd · auto-restart</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num" style="color:#58a6ff">10K+</div>
+      <div class="stat-lbl">CONCURRENT USERS</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" style="color:#3fb950">50%</div>
+      <div class="stat-lbl">LOAD TIME ↓</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" style="color:#f85149">0</div>
+      <div class="stat-lbl">SECURITY BREACHES</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" style="color:#e3b341">&lt;40%</div>
+      <div class="stat-lbl">PEAK CPU</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

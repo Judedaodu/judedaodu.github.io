@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Enterprise Zero-Trust Network Authentication Platform — a case study by Jude Daodu." />
+  <title>Zero-Trust NAC Case Study | Jude Daodu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body class="case-study-page">
+
+  <!-- ░░ NAVBAR ░░ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html#hero" class="logo">JD<span class="logo-accent">.</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#skills" class="nav-link">Skills</a>
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ░░ CASE STUDY HERO ░░ -->
+    <header class="case-study-hero">
+      <div class="container case-study-hero-inner">
+        <a href="../index.html#projects" class="case-back fade-in">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Portfolio
+        </a>
+
+        <div class="case-study-header fade-in">
+          <p class="case-study-category">Security Engineering · Project 01</p>
+          <h1 class="case-study-title">Enterprise Zero-Trust Network Authentication Platform</h1>
+          <p class="case-study-subtitle">Network Access Control with FreeRADIUS, Headwind MDM, &amp; 802.1X Architecture</p>
+        </div>
+
+        <figure class="case-study-hero-image fade-in">
+          <iframe
+            src="../assets/diagrams/nac-architecture-embed.html"
+            title="Zero-Trust NAC architecture diagram"
+            loading="eager"
+            scrolling="no"
+            tabindex="-1"
+          ></iframe>
+        </figure>
+      </div>
+    </header>
+
+    <div class="container case-study-body">
+
+      <!-- ░░ PROJECT OVERVIEW ░░ -->
+      <section class="section fade-in" aria-labelledby="overview-heading">
+        <h2 id="overview-heading">Project Overview</h2>
+        <p>Designed and engineered an enterprise-grade Zero-Trust Network Access Control (NAC) architecture to secure network entry points across a distributed corporate environment serving over 5,000 users. The project mitigated severe risks associated with unauthorized rogue devices, credential sharing, and unmanaged endpoints by implementing strict 802.1X authentication protocols. By integrating a centralized FreeRADIUS engine running on hardened Linux servers with Headwind Mobile Device Management (MDM), the platform automated secure device onboarding, enforced strict least-privilege dynamic VLAN assignments, and established continuous endpoint posture validation. This comprehensive implementation successfully eliminated perimeter vulnerabilities, streamlined compliance auditing, and achieved an estimated <strong>$1 million</strong> in cost savings relative to commercial proprietary NAC licensing and mitigation overhead.</p>
+      </section>
+
+      <!-- ░░ PROBLEMS & GOALS ░░ -->
+      <section class="section fade-in" aria-labelledby="problems-goals-heading">
+        <h2 id="problems-goals-heading" class="visually-hidden">Problems &amp; Goals</h2>
+
+        <div class="case-grid-2">
+
+          <div class="case-block case-block--problems">
+            <h3>Problems</h3>
+            <ul class="case-list case-list--problems">
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Unmanaged Perimeter Risks:</strong> The absence of network access control allowed unvetted personal devices and third-party hardware to connect directly to the corporate network, increasing exposure to lateral malware movement and data exfiltration.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Credential Sharing &amp; Weak Auth:</strong> Reliance on static pre-shared keys (PSKs) or weak legacy authentication protocols led to widespread credential sharing among personnel, leaving network access logs unauditable.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Manual Onboarding Bottlenecks:</strong> Provisioning network certificates and security configurations manually for thousands of corporate mobile devices and workstations placed an unsustainable operational burden on the IT infrastructure team.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✗</span>
+                <span><strong>Lack of Compliance Enforcement:</strong> Endpoints frequently accessed the corporate network without verified security postures (e.g., missing device encryption, outdated OS patches, disabled firewalls), violating enterprise security policies.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="case-block case-block--goals">
+            <h3>Goals</h3>
+            <ul class="case-list case-list--goals">
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Deploy Robust 802.1X Authentication:</strong> Implement a vendor-agnostic, open-source RADIUS infrastructure to authenticate every wired and wireless connection attempt at the network edge.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Automate Device Lifecycle Management:</strong> Seamlessly integrate MDM orchestration to provision network profiles, cryptographic keys, and configuration updates over-the-air (OTA) to 5,000+ endpoints.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Enforce Zero-Trust Network Isolation:</strong> Implement dynamic VLAN steering based on user roles and device ownership to restrict network access strictly to authorized resources.</span>
+              </li>
+              <li>
+                <span class="case-list-icon" aria-hidden="true">✓</span>
+                <span><strong>Optimize Total Cost of Ownership (TCO):</strong> Build the core security infrastructure utilizing robust open-source systems to eliminate costly proprietary software licensing fees while exceeding enterprise scaling needs.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ░░ ROLE & RESPONSIBILITIES ░░ -->
+      <section class="section fade-in" aria-labelledby="role-heading">
+        <h2 id="role-heading">Role &amp; Responsibilities</h2>
+        <ul class="case-list case-list--role">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Architected Core NAC Topology:</strong> Formulated the end-to-end authentication flow, encompassing the directory services integration, EAP-TLS/PEAP protocol configurations, and RADIUS accounting pipelines.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Deployed and Hardened FreeRADIUS Engine:</strong> Built, configured, and optimized FreeRADIUS instances on high-availability Linux servers, tailoring custom authentication modules and dictionary extensions.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Managed MDM Infrastructure:</strong> Directed the deployment of Headwind MDM, designing unified device management templates, application blacklisting rules, and automated configuration enrollment workflows.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Configured Network Infrastructure:</strong> Partnered with network teams to configure enterprise switches and wireless LAN controllers (WLCs) for 802.1X enforcement, RADIUS fallback behaviors, and dynamic access control lists (dACLs).</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">▸</span>
+            <span><strong>Automated Posture Assessment:</strong> Wrote validation hooks and scripts to verify that connecting devices met compliance baselines before granting full corporate intranet access.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ░░ ARCHITECTURE & DEPLOYMENT FLOW ░░ -->
+      <section class="section fade-in" aria-labelledby="architecture-heading">
+        <h2 id="architecture-heading">Architecture &amp; Deployment Flow</h2>
+        <ul class="case-list case-list--arch">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Device Enrollment:</strong> Corporate endpoints are enrolled into Headwind MDM, which automatically pushes pre-configured enterprise Wi-Fi and wired profiles along with secure connection profiles.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Access Attempt Trigger:</strong> When an endpoint connects to an enterprise switchport or SSID, the network access device (switch/WLC) blocks standard traffic and initiates an 802.1X authentication challenge.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>EAP Request Forwarding:</strong> The network switch packages the client's credentials or digital certificate inside an Extensible Authentication Protocol (EAP) frame and forwards it as a RADIUS Access-Request to the FreeRADIUS server.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Directory Verification:</strong> The FreeRADIUS engine processes the request, validating the certificate chain or checking the credentials against the central enterprise directory (LDAP/Active Directory).</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Posture and Compliance Validation:</strong> Simultaneously, FreeRADIUS queries the Headwind MDM database to confirm the device is active, managed, and compliant with corporate security baselines.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Dynamic Access Grant:</strong> Upon successful authentication and posture verification, FreeRADIUS responds with a RADIUS Access-Accept, attaching specific vendor-specific attributes (VSAs) indicating the user's assigned VLAN and ACL.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Network Segment Enforcement:</strong> The network switch moves the port or wireless session into the designated secure VLAN, confining the user strictly to their authorized network segment.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">→</span>
+            <span><strong>Continuous Monitoring &amp; Accounting:</strong> The RADIUS accounting loop tracks session durations, byte counts, and disconnections, logging comprehensive telemetry data to a central syslog engine for audit trails.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ░░ KEY IMPLEMENTATION DETAILS ░░ -->
+      <section class="section fade-in" aria-labelledby="implementation-heading">
+        <h2 id="implementation-heading">Key Implementation Details</h2>
+
+        <div class="case-detail-cards">
+
+          <article class="case-detail-card">
+            <h3>High-Performance FreeRADIUS Engineering</h3>
+            <p>Customized internal RADIUS logic to handle thousands of concurrent authentication requests with sub-second latency. Implemented robust session caching, structured connection pooling, and multi-tier failover groups to ensure uninterrupted network access across all corporate sites.</p>
+          </article>
+
+          <article class="case-detail-card">
+            <h3>Automated MDM-Driven Device Onboarding</h3>
+            <p>Leveraging Headwind MDM, created silent installation payloads that automatically configured network adapters, enforced zero-touch client configurations, and eliminated the need for end-users to interact with complex network settings.</p>
+          </article>
+
+          <article class="case-detail-card">
+            <h3>Dynamic Network Segmentation (VLAN Steering)</h3>
+            <p>Replaced flat network topologies with a dynamic identity-driven model. The RADIUS engine dynamically injected VLAN assignments at the hardware layer during authentication, ensuring a guest, an intern, and an executive received separate network access profiles on the exact same infrastructure.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ░░ RESULTS & IMPACT ░░ -->
+      <section class="section fade-in" aria-labelledby="results-heading">
+        <h2 id="results-heading">Results &amp; Impact</h2>
+        <ul class="case-list case-list--results">
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>100% Zero-Trust Edge Security:</strong> Successfully restricted network entry to verified, managed devices only, eliminating unauthorized hardware connections across the entire enterprise environment.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>$1 Million in Capital Savings:</strong> By architecting and scaling production-grade open-source solutions (FreeRADIUS and Headwind MDM), bypassed exorbitant per-user licensing fees tied to proprietary alternatives.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>Seamless Scalability for 5,000+ Users:</strong> Built a resilient infrastructure that easily manages the peak load authentication spikes of thousands of corporate endpoints with zero service degradation.</span>
+          </li>
+          <li>
+            <span class="case-list-icon" aria-hidden="true">✓</span>
+            <span><strong>Zero-Touch IT Overhead Reduction:</strong> Automated the entirety of network configuration provisioning via MDM, reducing individual device network troubleshooting tickets to near zero.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ░░ TECHNOLOGY STACK ░░ -->
+      <section class="section fade-in" aria-labelledby="tech-heading">
+        <h2 id="tech-heading">Technology Stack</h2>
+
+        <div class="case-tech-grid">
+
+          <div class="case-tech-group">
+            <h3>Security &amp; Authentication</h3>
+            <div class="case-tech-tags">
+              <span class="tag">802.1X</span>
+              <span class="tag">FreeRADIUS</span>
+              <span class="tag">EAP-TLS</span>
+              <span class="tag">PEAP</span>
+              <span class="tag">ACLs</span>
+            </div>
+          </div>
+
+          <div class="case-tech-group">
+            <h3>Endpoint Management</h3>
+            <div class="case-tech-tags">
+              <span class="tag">Headwind MDM</span>
+              <span class="tag">MDM</span>
+              <span class="tag">Android Enterprise</span>
+              <span class="tag">Endpoint Profiles</span>
+            </div>
+          </div>
+
+          <div class="case-tech-group">
+            <h3>Operating Systems &amp; Core Tech</h3>
+            <div class="case-tech-tags">
+              <span class="tag">Linux (Ubuntu/Debian)</span>
+              <span class="tag">Bash Scripting</span>
+            </div>
+          </div>
+
+          <div class="case-tech-group">
+            <h3>Networking Infrastructure</h3>
+            <div class="case-tech-tags">
+              <span class="tag">Enterprise Switching</span>
+              <span class="tag">WLCs</span>
+              <span class="tag">Dynamic VLAN</span>
+              <span class="tag">DHCP</span>
+              <span class="tag">DNS</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ░░ BACK CTA ░░ -->
+    <div class="case-study-footer-cta fade-in">
+      <a href="../index.html#projects" class="btn btn-ghost">
+        <i class="fa-solid fa-arrow-left"></i> Back to All Projects
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; <span id="year"></span> Daodu Jude Ayomide. All rights reserved.</p>
+        <p class="footer-built">Designed &amp; built by <span class="accent">Jude Daodu</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
